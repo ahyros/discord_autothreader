@@ -15,7 +15,9 @@ async def on_message(msg):
         return
     if not msg.channel.name == 'bugs':  # checks channel
         return
-
+    if msg.content.startswith("!hello"):
+        await msg.channel.send("Nazdar!")
+        return
     await msg.create_thread(name=msg.content)
 
 client.run(TOKEN)
